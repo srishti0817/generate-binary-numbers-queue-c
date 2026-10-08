@@ -1,0 +1,22 @@
+﻿#include <stdio.h>
+#include <string.h>
+
+void generateBinary(int n) {
+    char q[100][100];
+    int front = 0, rear = 0;
+
+    strcpy(q[rear++], "1");
+
+    for (int i = 1; i <= n; i++) {
+        char temp[100];
+        strcpy(temp, q[front++]);
+        printf("%s\n", temp);
+
+        char temp1[100], temp2[100];
+        sprintf(temp1, "%s0", temp);
+        sprintf(temp2, "%s1", temp);
+
+        strcpy(q[rear++], temp1);
+        strcpy(q[rear++], temp2);
+    }
+}
